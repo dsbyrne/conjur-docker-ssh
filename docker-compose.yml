@@ -1,0 +1,17 @@
+---
+
+bastion:
+  image: demo-bastion
+  hostname: bastion-itp-myorg-com
+  links:
+    - "target:target"
+  external_links:
+    - "conjur:conjur"
+  ports:
+    - "9022:22"
+
+target:
+  image: demo-bastion-target
+  hostname: analytics-001-itr-myorg-com
+  external_links:
+    - "conjur:conjur"
